@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/new/prefix1" >
+        <file>images/arrow-down.png</file>
+        <file>images/arrow-right.png</file>
+        <file>images/dialog-cancel.png</file>
+        <file>images/dialog-close.png</file>
+        <file>images/dialog-ok-apply.png</file>
+        <file>images/document-new.png</file>
+        <file>images/edit-paste.png</file>
+        <file>images/edit-redo.png</file>
+        <file>images/edit-undo.png</file>
+        <file>images/format-fill-color.png</file>
+        <file>images/go-down.png</file>
+        <file>images/go-next.png</file>
+        <file>images/help-about.png</file>
+        <file>images/document-open.png</file>
+        <file>images/document-print.png</file>
+        <file>images/document-save.png</file>
+        <file>images/edit-copy.png</file>
+        <file>images/edit-cut.png</file>
+        <file>images/edit-delete.png</file>
+        <file>images/mail-mark-notjunk.png</file>
+        <file>images/view-list-text.png</file>
+        <file>images/arepa.png</file>
+        <file>images/fondoTablero.png</file>
+        <file>images/queso.gif</file>
+        <file>images/sandwich.png</file>
+        <file>images/refrescos.png</file>
+        <file>images/jugos.png</file>
+        <file>images/cafes.png</file>
+        <file>images/empanadas3.jpg</file>
+        <file>images/mesa.gif</file>
+        <file>images/bar.png</file>
+        <file>images/obstaculo.png</file>
+        <file>images/application-x-trash.png</file>
+        <file>images/barSillas.png</file>
+        <file>images/mesaCircular.png</file>
+        <file>images/mesaCircularBAD.png</file>
+        <file>images/mesaCircularOK.png</file>
+        <file>images/mesaCuadrada.png</file>
+        <file>images/mesaCuadradaBAD.png</file>
+        <file>images/mesaCuadradaOK.png</file>
+        <file>images/obst1.png</file>
+        <file>images/obst2.png</file>
+        <file>images/obst3.png</file>
+    </qresource>
+</RCC>

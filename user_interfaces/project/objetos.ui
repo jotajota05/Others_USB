@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Objetos</class>
+ <widget class="QWidget" name="Objetos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>200</width>
+    <height>376</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QTreeWidget" name="treeWidget">
+     <property name="frameShape">
+      <enum>QFrame::VLine</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <attribute name="headerVisible">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Objetos</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string>Mesas</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/new/prefix1/images/mesa.gif</normaloff>:/new/prefix1/images/mesa.gif</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Redondas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cuadradas</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bares</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/new/prefix1/images/bar.png</normaloff>:/new/prefix1/images/bar.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Redondos</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cuadrados</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arcos</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Obstaculos</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/new/prefix1/images/obstaculo.png</normaloff>:/new/prefix1/images/obstaculo.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Columnas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Muros</string>
+       </property>
+      </item>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>treeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>Objetos</receiver>
+   <slot>newObs(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>101</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newObs(QTreeWidgetItem*,int)</slot>
+ </slots>
+</ui>

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Arepera</class>
+ <widget class="QMainWindow" name="Arepera">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1009</width>
+    <height>744</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Arepera con chicharron</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>261</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="tabShape">
+        <enum>QTabWidget::Rounded</enum>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <property name="toolTip">
+         <string>Sección de diseño del restaurant</string>
+        </property>
+        <attribute name="title">
+         <string>Diseno</string>
+        </attribute>
+        <widget class="QWidget" name="gridLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>49</y>
+           <width>241</width>
+           <height>521</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="layoutObjetos"/>
+        </widget>
+        <widget class="QPushButton" name="pushButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>6</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Nuevo diseño de restaurant</string>
+         </property>
+         <property name="text">
+          <string>Nuevo</string>
+         </property>
+         <property name="icon">
+          <iconset resource="Images.qrc">
+           <normaloff>:/new/prefix1/images/document-new.png</normaloff>:/new/prefix1/images/document-new.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>10</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>6</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Guardar diseño del restaurant</string>
+         </property>
+         <property name="text">
+          <string>Guardar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="Images.qrc">
+           <normaloff>:/new/prefix1/images/document-save.png</normaloff>:/new/prefix1/images/document-save.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>10</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>6</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Seleccionar color del piso del restaurant</string>
+         </property>
+         <property name="text">
+          <string>Color</string>
+         </property>
+         <property name="icon">
+          <iconset resource="Images.qrc">
+           <normaloff>:/new/prefix1/images/format-fill-color.png</normaloff>:/new/prefix1/images/format-fill-color.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <property name="toolTip">
+         <string>Sección de administracion de pedidos y mesas</string>
+        </property>
+        <attribute name="title">
+         <string>Administrador</string>
+        </attribute>
+        <widget class="QWidget" name="gridLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>9</y>
+           <width>241</width>
+           <height>561</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="layoutProductos"/>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="tablero" native="true">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>711</width>
+      <height>621</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1009</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionAbrir_2"/>
+    <addaction name="actionImprimir_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuEditar">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <addaction name="actionCopiar_2"/>
+    <addaction name="actionCortar_2"/>
+    <addaction name="actionPegar_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionDeshacer_2"/>
+    <addaction name="actionRehacer_2"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionTemas_de_Ayuda"/>
+    <addaction name="separator"/>
+    <addaction name="actionAcerca_de"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuEditar"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAbrir"/>
+   <addaction name="separator"/>
+   <addaction name="actionImprimir"/>
+   <addaction name="separator"/>
+   <addaction name="actionCopiar"/>
+   <addaction name="actionCortar"/>
+   <addaction name="actionPegar"/>
+   <addaction name="separator"/>
+   <addaction name="actionDeshacer"/>
+   <addaction name="actionRehacer"/>
+   <addaction name="actionPapelera"/>
+   <addaction name="separator"/>
+   <addaction name="actionAyuda"/>
+  </widget>
+  <widget class="QStatusBar" name="mierda"/>
+  <action name="actionNuevo">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/document-new.png</normaloff>:/new/prefix1/images/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+  </action>
+  <action name="actionAbrir">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/document-open.png</normaloff>:/new/prefix1/images/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+   <property name="toolTip">
+    <string>Abrir distribución de restaurant</string>
+   </property>
+  </action>
+  <action name="actionImprimir">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/document-print.png</normaloff>:/new/prefix1/images/document-print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimir</string>
+   </property>
+   <property name="toolTip">
+    <string>Imprimir factura</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/document-save.png</normaloff>:/new/prefix1/images/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+  </action>
+  <action name="actionCopiar">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-copy.png</normaloff>:/new/prefix1/images/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copiar</string>
+   </property>
+   <property name="toolTip">
+    <string>Copiar objeto o producto</string>
+   </property>
+  </action>
+  <action name="actionCortar">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-cut.png</normaloff>:/new/prefix1/images/edit-cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cortar</string>
+   </property>
+   <property name="toolTip">
+    <string>Cortar objeto o producto</string>
+   </property>
+  </action>
+  <action name="actionPegar">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-paste.png</normaloff>:/new/prefix1/images/edit-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pegar</string>
+   </property>
+   <property name="toolTip">
+    <string>Pegar objeto o producto</string>
+   </property>
+  </action>
+  <action name="actionRehacer">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-redo.png</normaloff>:/new/prefix1/images/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rehacer</string>
+   </property>
+   <property name="toolTip">
+    <string>Rehacer ultima acción deshecha</string>
+   </property>
+  </action>
+  <action name="actionDeshacer">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-undo.png</normaloff>:/new/prefix1/images/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deshacer</string>
+   </property>
+   <property name="toolTip">
+    <string>Deshacer ultima acción realizada</string>
+   </property>
+  </action>
+  <action name="actionAyuda">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/help-about.png</normaloff>:/new/prefix1/images/help-about.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ayuda</string>
+   </property>
+   <property name="toolTip">
+    <string>Ayuda sobre el sistema</string>
+   </property>
+  </action>
+  <action name="actionAbrir_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/document-open.png</normaloff>:/new/prefix1/images/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionImprimir_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/document-print.png</normaloff>:/new/prefix1/images/document-print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimir</string>
+   </property>
+  </action>
+  <action name="actionCopiar_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-copy.png</normaloff>:/new/prefix1/images/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copiar</string>
+   </property>
+  </action>
+  <action name="actionCortar_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-cut.png</normaloff>:/new/prefix1/images/edit-cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cortar</string>
+   </property>
+  </action>
+  <action name="actionPegar_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-paste.png</normaloff>:/new/prefix1/images/edit-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pegar</string>
+   </property>
+  </action>
+  <action name="actionDeshacer_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-undo.png</normaloff>:/new/prefix1/images/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deshacer</string>
+   </property>
+  </action>
+  <action name="actionTemas_de_Ayuda">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/help-about.png</normaloff>:/new/prefix1/images/help-about.png</iconset>
+   </property>
+   <property name="text">
+    <string>Temas de Ayuda</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de">
+   <property name="text">
+    <string>Acerca de...</string>
+   </property>
+  </action>
+  <action name="actionRehacer_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/edit-redo.png</normaloff>:/new/prefix1/images/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rehacer</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/dialog-close.png</normaloff>:/new/prefix1/images/dialog-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionPapelera">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/new/prefix1/images/application-x-trash.png</normaloff>:/new/prefix1/images/application-x-trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>Papelera</string>
+   </property>
+   <property name="toolTip">
+    <string>Papelera de reciclaje de objetos o productos</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>selected(QString)</signal>
+   <receiver>Arepera</receiver>
+   <slot>lockDrag(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>328</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>lockDrag(QString)</slot>
+ </slots>
+</ui>

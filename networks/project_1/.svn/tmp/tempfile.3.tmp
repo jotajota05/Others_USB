@@ -1,0 +1,223 @@
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <ctype.h>
+
+#include "sock_utils.h"
+#include "marzullo2.h"
+
+int main (int argc, char *argv[]) {
+
+  struct sockaddr_in direccion, servidor, emisor;
+  struct in_addr direccion_host;
+  struct hostent *host;
+  socklen_t longDireccion = sizeof(struct sockaddr_in);
+  int sock, longt, n, longt_emisor, conexion, tiempo_tcp, tiempo_udp, j, k, puerto, num_preg, opcion_ene, c;
+  char buffer[256], *protocolo, *serv, subStr[2];
+
+  if (argc != 8 && argc != 9) error("Parametros incompletos o incorrectos");
+
+  opterr = 0;
+  opcion_ene = 0;
+     
+  while ((c = getopt (argc, argv, "s:p:v:tun")) != -1)
+    switch (c) {
+    case 's':
+      substring(0,1,optarg,subStr,sizeof(subStr));
+      if (!strcmp(subStr,"-")) error("Ingrese el Nombre o direccion del servidor luego de -s");
+      serv = optarg;
+      break;
+    case 'p':
+      substring(0,1,optarg,subStr,sizeof(subStr));
+      if (!strcmp(subStr,"-")) error("Ingrese el numero de puerto luego de -p");
+      puerto = atoi(optarg);
+      break;
+    case 'v':
+      substring(0,1,optarg,subStr,sizeof(subStr));
+      if (!strcmp(subStr,"-")) error("Ingrese el numero de preguntas luego de -v");
+      num_preg = atoi(optarg);
+      break;
+    case 't':
+      protocolo = "-t";
+      break;
+    case 'u':
+      protocolo = "-u";
+      break;
+    case 'n':
+      opcion_ene = 1;
+      break;
+    case '?':
+      error("Opcion invalida");
+      break;
+    default:
+      abort();
+      break;
+    }
+
+  ////////////////////////////////////////////////////////////
+  //////////////Se realiza la conexion por TCP////////////////
+  ///////////////////////////////////////////////////////////
+
+  if (!strcmp(protocolo,"-t")) {
+      
+    //Se intenta convertir el argumento en una direccion, para luego buscar el host, si no, se busca por nombre
+    if (inet_aton(serv, &direccion_host))
+      host = gethostbyaddr((char *)&direccion_host, sizeof(direccion_host), AF_INET);
+    else
+      host = gethostbyname(serv);
+
+    if (!host) {
+      herror("Error al buscar el Host");
+      exit(1);
+    }
+	
+    //Se crea el socket de comunicacion
+    if(( sock = socket(PF_INET, SOCK_STREAM, 0)) < 0) error("Error al crear el Socket");
+    
+    direccion.sin_family = AF_INET;
+    direccion.sin_port = htons(puerto);
+    
+    // Toma la primera direccion IP asociada a este hostname
+    memcpy(&direccion.sin_addr, host->h_addr_list[0], sizeof(direccion.sin_addr));
+
+    //Se conecta al servidor
+    conexion = connect(sock, (struct sockaddr *)&direccion, sizeof(direccion));
+    if (conexion < 0) error("Error al conectar con el socket");
+
+    ////////////////////////////////////
+    //////Aqui se hace la peticion//////
+    {
+      ////Aca empieza marzullo////
+      int it = num_preg;
+      int lista[it*2][2] ;
+      int i = 0;
+      int a = 0;
+      int tj,desface,primera,ultima;
+      for(i= 0; i < it ; i++){
+	if (i==0) primera = time(NULL);  	
+	lista[a][0]  = time(NULL);
+	lista[a][1] = -1;
+
+	{
+
+	  write(sock,"Dame la Hora",256);
+	  read(sock,&tiempo_tcp,256);
+	  printf("Tiempo = %d\n",tiempo_tcp);
+
+	}
+	a = a+1;
+	lista[a][0]  = time(NULL);
+	if ( i == it-1) ultima = lista[a][0];
+	lista[a][1] = 1;
+	//Normalizando//
+	desface = (primera-lista[a-1][0]);
+	tj = lista[a][0] - desface;
+	lista[a-1][0] = tiempo_tcp +(tj-primera)/2;
+	lista[a][0] = tiempo_tcp-(tj-primera)/2;
+	a= a+1;
+      }     
+	  struct Par * par = malloc(sizeof(struct Par));
+      par = Marzullo(it,lista);
+      printf("El intervalo es: %d - %d\n", par->a , par->b);
+      int hora = (ultima-primera) + ((par->b - par->a)/2) + par->a;
+      char prim[] = "date --date='@";
+      char inter[10];
+      sprintf(inter,"%i",hora);
+      char *s = strcat(prim,inter);
+      s = strcat(s,"'");
+      printf("%s\n",prim);		
+      system(s);
+    }	
+
+    //Se cierra el socket
+    close(sock);
+
+    ///////////////////////////////////
+
+    ////////////////////////////////////////////////////////////
+    //////////////Se realiza la conexion por UDP////////////////
+    ///////////////////////////////////////////////////////////
+
+
+  } else if (!strcmp(protocolo,"-u")) {
+
+    //Se crea el socket de comunicacion
+    sock = socket(AF_INET,SOCK_DGRAM,0);
+    if (sock < 0) error("Error al crear el socket!");
+
+    servidor.sin_family = AF_INET;
+
+    host = gethostbyname(serv);
+    if (host == 0) error("Error! Host desconocido"); 
+
+    bcopy((char *)host->h_addr,(char *)&servidor.sin_addr,host->h_length);
+
+    servidor.sin_port = htons(puerto);
+    longt = sizeof(struct sockaddr_in);
+      
+    //////////////////////////////////////////////////////////
+    //////Aqui se hace la peticion con sendto y recvfrom//////
+    {
+      ////Aca empieza marzullo////
+      int it = num_preg;
+      int lista[it*2][2] ;
+      int i = 0;
+      int a = 0;
+      int tj,desface,primera,ultima;
+      for(i= 0; i < it ; i++){
+	if (i==0) primera = time(NULL);  	
+	lista[a][0]  = time(NULL);
+	lista[a][1] = -1;
+
+	{	
+	  
+	  bzero(buffer,256);
+	  n=sendto(sock,"Dame la hora!", 256,0,(struct sockaddr *)&servidor,longt);
+	  if (n < 0) error("Sendto");
+	  n = recvfrom(sock,buffer,256,0,(struct sockaddr *)&emisor, &longt);
+	  if (n < 0) error("recvfrom");
+	  printf("Tiempo = %d\n",atoi(buffer));
+
+	}
+	a = a+1;
+	lista[a][0]  = time(NULL);
+	if ( i == it-1) ultima = lista[a][0];
+	lista[a][1] = 1;
+	//Normalizando//
+	desface = (primera-lista[a-1][0]);
+	tj = lista[a][0] - desface;
+	lista[a-1][0] = atoi(buffer) -(tj-primera)/2;
+	lista[a][0] = atoi(buffer)+(tj-primera)/2;
+	a= a+1;
+      }
+   
+	  struct Par * par = malloc(sizeof(struct Par));
+      par = Marzullo(it,lista);
+
+      printf("El intervalo es: %d - %d\n", par->a , par->b);
+      int hora = (ultima-primera) + ((par->b - par->a)/2) + par->a;
+      char prim[] = "date --date='@";
+      char inter[10];
+      sprintf(inter,"%i",hora);
+      char *s = strcat(prim,inter);
+      s = strcat(s,"'");
+      printf("%s\n",prim);		
+      system(s);
+    }
+
+    //Se cierra el socket
+    close(sock);
+
+    /////////////////////////////////////////////////////
+
+  }
+
+  return 0;
+
+}

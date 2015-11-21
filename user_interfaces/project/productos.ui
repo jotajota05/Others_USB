@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Productos</class>
+ <widget class="QWidget" name="Productos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>213</width>
+    <height>375</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QTreeWidget" name="treeWidget">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="autoScrollMargin">
+      <number>16</number>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="indentation">
+      <number>15</number>
+     </property>
+     <attribute name="headerVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="headerCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Productos</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>223</red>
+        <green>223</green>
+        <blue>223</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string>Arepas</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset resource="Images.qrc">
+        <normaloff>:/new/prefix1/images/arepa.png</normaloff>:/new/prefix1/images/arepa.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Arepa de Chicharron</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arepa de Queso Amarillo</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arepa de Queso Guayanes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arepa de Carne Mechada</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arepa Pelua</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arepa Reina Pepeada</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Empanadas</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset resource="Images.qrc">
+        <normaloff>:/new/prefix1/images/empanadas3.jpg</normaloff>:/new/prefix1/images/empanadas3.jpg</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Empanada de Queso</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Empanada de Carne Mechada</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Empana de Carne Molida</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Empanada Domino</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Empanada de Pollo</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sandwich</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset resource="Images.qrc">
+        <normaloff>:/new/prefix1/images/sandwich.png</normaloff>:/new/prefix1/images/sandwich.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Sandwich de Jamon y Queso</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sandwich de Atun</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Club House</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Refrescos</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset resource="Images.qrc">
+        <normaloff>:/new/prefix1/images/refrescos.png</normaloff>:/new/prefix1/images/refrescos.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Pepsi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Coca-Cola</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Frescolita</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>7up</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Coca-Cola Zero</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Jugos</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset resource="Images.qrc">
+        <normaloff>:/new/prefix1/images/jugos.png</normaloff>:/new/prefix1/images/jugos.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Naranja</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Melon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lechoza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fresa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Durazno</string>
+       </property>
+      </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cafe</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="icon">
+       <iconset resource="Images.qrc">
+        <normaloff>:/new/prefix1/images/cafes.png</normaloff>:/new/prefix1/images/cafes.png</iconset>
+      </property>
+      <item>
+       <property name="text">
+        <string>Negro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Marron</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Marron Oscuro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Con Leche</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Guayoyo</string>
+       </property>
+      </item>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>treeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>Productos</receiver>
+   <slot>cantidadDialog(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>207</x>
+     <y>242</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>214</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newProd(QTreeWidgetItem*,int)</slot>
+  <slot>cantidadDialog(QTreeWidgetItem*,int)</slot>
+ </slots>
+</ui>
